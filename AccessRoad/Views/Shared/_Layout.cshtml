@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AccessRoad</title>
+    @Styles.Render("~/Content/css")
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script>
+       
+        require([
+           
+            "esri/map",
+           
+            "esri/dijit/BasemapGallery",
+            "esri/dijit/Search",
+            "esri/dijit/Measurement",
+            "esri/dijit/Scalebar",
+            "esri/toolbars/draw",
+            "esri/graphic",
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/symbols/SimpleFillSymbol",
+            "esri/dijit/OverviewMap",
+            "dojo/parser",
+            "dijit/registry",
+            "dijit/layout/BorderContainer",
+            "dijit/layout/ContentPane",
+            "dijit/form/Button",
+            "dijit/WidgetSet",
+            "dojo/domReady!"],
+            function ( Map,  BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
+                SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap, 
+                parser, registry) {
+                parser.parse();
+             
+              
+              
+                var map = new Map("map", {
+                    basemap: "topo",
+                    center: [78, 10],
+                    zoom: 10
+                });
+               
+               
+                map.on("load", createToolbar);
+                registry.forEach(function (d) {
+                    if (d.declaredClass === "dijit.form.Button") {
+                        d.on("click", activateTool);
+                    }
+                });
+                function activateTool() {
+                    var tool = this.label.toUpperCase().replace(/ /g, "_");
+                    toolbar.activate(Draw[tool]);
+                    map.hideZoomSlider();
+                }
+
+                function createToolbar(themap) {
+                    toolbar = new Draw(map);
+                    toolbar.on("draw-end", addToMap);
+                }
+
+                function addToMap(evt) {
+                    var symbol;
+                    toolbar.deactivate();
+                    map.showZoomSlider();
+                    switch (evt.geometry.type) {
+                        case "point":
+                        case "multipoint":
+                            symbol = new SimpleMarkerSymbol();
+                            break;
+                        case "polyline":
+                            symbol = new SimpleLineSymbol();
+                            break;
+                        default:
+                            symbol = new SimpleFillSymbol();
+                            break;
+                    }
+                    var graphic = new Graphic(evt.geometry, symbol);
+                    map.graphics.add(graphic);
+                }
+                var search = new Search({ map: map }, "search");
+                search.startup();
+                var scalebar = new Scalebar({ map: map, scalebarUnit: "dual", attachTo: "bottom-center" });
+                var measurement = new Measurement({ map: map }, "measurement");
+                measurement.startup();
+                var basemapGallery = new BasemapGallery({
+                    showArcGISBasemaps: true,
+                    map: map
+                }, "basemapGallery");
+                basemapGallery.startup();
+
+                basemapGallery.on("error", function (msg) {
+                    console.log("basemap gallery error:  ", msg);
+                });
+                var overviewMapDijit = new OverviewMap({
+                    map: map,
+                    visible: true
+                });
+                overviewMapDijit.startup();
+              
+                
+
+
+            });
+
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
