@@ -46,7 +46,7 @@ html, body {
 }
 @media screen {
     print {
-        display: inline;
+        display: none;
     }
 }
 
@@ -72,7 +72,11 @@ html, body {
     height: 100%;
     width: 100%;
 }
+#LocateButton {
+display: block;
+position: absolute;
+z-index: 2;
+top: 500px;
 
-   
-
-   
+line-height: 1.25em;
+}
