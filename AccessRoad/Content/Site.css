@@ -72,6 +72,8 @@ html, body {
 .ovwHighlight {
     width: 44px !important;
     height: 44px !important;
+    border:solid !important;
+    border-color:cadetblue !important;
 }
 
 
