@@ -9,7 +9,6 @@
         require([
 
             "esri/map",
-
             "esri/dijit/LocateButton",
             "esri/dijit/BasemapGallery",
             "esri/dijit/Search",
@@ -21,6 +20,7 @@
             "esri/symbols/SimpleLineSymbol",
             "esri/symbols/SimpleFillSymbol",
             "esri/dijit/OverviewMap",
+            "esri/dijit/Print", 
             "dojo/parser",
             "dijit/registry",
             "dijit/layout/BorderContainer",
@@ -29,7 +29,7 @@
             "dijit/WidgetSet",
             "dojo/domReady!"],
             function (Map, LocateButton, BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
-                SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap,
+                SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap, Print,
                 parser, registry) {
                 parser.parse();
 
@@ -103,7 +103,13 @@
                 });
                 overviewMapDijit.startup();
 
+                var printer = new Print({
+                    map: map,
+                    url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
+                           
 
+                }, "printer");
+                printer.startup();
 
 
             });
