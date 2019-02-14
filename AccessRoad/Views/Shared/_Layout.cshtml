@@ -32,9 +32,6 @@
                 SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap, Print,
                 parser, registry) {
                 parser.parse();
-
-
-
                 var map = new Map("map", {
                     basemap: "topo",
                     center: [78, 10],
@@ -85,18 +82,21 @@
                 }
                 var search = new Search({ map: map }, "search");
                 search.startup();
+
                 var scalebar = new Scalebar({ map: map, scalebarUnit: "dual", attachTo: "bottom-center" });
+
                 var measurement = new Measurement({ map: map }, "measurement");
                 measurement.startup();
+
                 var basemapGallery = new BasemapGallery({
                     showArcGISBasemaps: true,
                     map: map
                 }, "basemapGallery");
                 basemapGallery.startup();
-
                 basemapGallery.on("error", function (msg) {
                     console.log("basemap gallery error:  ", msg);
                 });
+
                 var overviewMapDijit = new OverviewMap({
                     map: map,
                     visible: true
@@ -114,14 +114,7 @@
 
             });
 
-        function myFunction() {
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
+       
 
     </script>
 </head>
