@@ -5,11 +5,12 @@
     @Styles.Render("~/Content/css")
     <script src="https://js.arcgis.com/3.27/"></script>
     <script>
-       
+
         require([
-           
+
             "esri/map",
-           
+
+            "esri/dijit/LocateButton",
             "esri/dijit/BasemapGallery",
             "esri/dijit/Search",
             "esri/dijit/Measurement",
@@ -27,20 +28,25 @@
             "dijit/form/Button",
             "dijit/WidgetSet",
             "dojo/domReady!"],
-            function ( Map,  BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
-                SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap, 
+            function (Map, LocateButton, BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
+                SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap,
                 parser, registry) {
                 parser.parse();
-             
-              
-              
+
+
+
                 var map = new Map("map", {
                     basemap: "topo",
                     center: [78, 10],
                     zoom: 10
+
                 });
-               
-               
+
+                var geoLocate = new LocateButton({
+                    map: map
+                }, "LocateButton");
+                geoLocate.startup();
+
                 map.on("load", createToolbar);
                 registry.forEach(function (d) {
                     if (d.declaredClass === "dijit.form.Button") {
@@ -96,8 +102,8 @@
                     visible: true
                 });
                 overviewMapDijit.startup();
-              
-                
+
+
 
 
             });
@@ -110,6 +116,7 @@
                 x.style.display = "none";
             }
         }
+
     </script>
 </head>
 
