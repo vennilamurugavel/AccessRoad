@@ -9,7 +9,6 @@
         require([
 
             "esri/map",
-            "esri/layers/OpenStreetMapLayer",
             "esri/dijit/LocateButton",
             "esri/dijit/BasemapGallery",
             "esri/dijit/Search",
@@ -29,7 +28,7 @@
             "dijit/form/Button",
             "dijit/WidgetSet",
             "dojo/domReady!"],
-            function (Map, OpenStreetMapLayer, LocateButton, BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
+            function (Map, LocateButton, BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
                 SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap, Print,
                 parser, registry) {
                 parser.parse();
@@ -39,9 +38,7 @@
                     zoom: 10
 
                 });
-                var openstreetmap = new OpenStreetMapLayer();
-                map.addLayer(openstreetmap);
-
+               
                 var geoLocate = new LocateButton({
                     map: map
                 }, "LocateButton");
