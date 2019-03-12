@@ -2,141 +2,15 @@
 <html lang="en">
 <head>
     <title>AccessRoad</title>
-    @Styles.Render("~/Content/css")
-    <script src="https://js.arcgis.com/3.27/"></script>
-    <script>
-
-        require([
-
-            "esri/map",
-            "esri/dijit/LocateButton",
-            "esri/dijit/BasemapGallery",
-            "esri/dijit/Search",
-            "esri/dijit/Measurement",
-            "esri/dijit/Scalebar",
-            "esri/toolbars/draw",
-            "esri/graphic",
-            "esri/symbols/SimpleMarkerSymbol",
-            "esri/symbols/SimpleLineSymbol",
-            "esri/symbols/SimpleFillSymbol",
-            "esri/dijit/OverviewMap",
-            "esri/dijit/Print",
-            "dojo/parser",
-            "dijit/registry",
-            "dijit/layout/BorderContainer",
-            "dijit/layout/ContentPane",
-            "dijit/form/Button",
-            "dijit/WidgetSet",
-            "dojo/domReady!"],
-            function (Map,LocateButton, BasemapGallery, Search, Measurement, Scalebar, Draw, Graphic,
-                SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, OverviewMap, Print,
-                parser, registry) {
-                parser.parse();
-
-
-
-                var map = new Map("map", {
-                    basemap: "topo",
-                    center: [78, 10],
-                    zoom: 10
-
-                });
-             
-              
-                map.on("load", createToolbar);
-                registry.forEach(function (d) {
-                    if (d.declaredClass === "dijit.form.Button") {
-                        d.on("click", activateTool);
-                    }
-                });
-                function activateTool() {
-                    var tool = this.label.toUpperCase().replace(/ /g, "_");
-                    toolbar.activate(Draw[tool]);
-                    map.hideZoomSlider();
-                }
-
-                function createToolbar(themap) {
-                    toolbar = new Draw(map);
-                    toolbar.on("draw-end", addToMap);
-                }
-
-                function addToMap(evt) {
-                    var symbol;
-                    toolbar.deactivate();
-                    map.showZoomSlider();
-                    switch (evt.geometry.type) {
-
-                        case "polyline":
-                            symbol = new SimpleLineSymbol();
-
-                            break;
-                        case "Line":
-                            symbol = new SimpleLineSymbol();
-                            break;
-                        default:
-                            symbol = new SimpleLineSymbol();
-                            break;
-                    }
-                    var graphic = new Graphic(evt.geometry, symbol);
-                    map.graphics.add(graphic);
-                }
-                var search = new Search({ map: map }, "search");
-                search.startup();
-                
-                var scalebar = new Scalebar({ map: map, scalebarUnit: "dual", attachTo: "bottom-center" });
-                var measurement = new Measurement({ map: map }, "measurement");
-                measurement.startup();
-                var basemapGallery = new BasemapGallery({
-                    showArcGISBasemaps: true,
-                    map: map
-                }, "basemapGallery");
-                basemapGallery.startup();
-
-                basemapGallery.on("error", function (msg) {
-                    console.log("basemap gallery error:  ", msg);
-                });
-                var overviewMapDijit = new OverviewMap({
-                    map: map,
-                    visible: true
-                });
-                overviewMapDijit.startup();
-                var printer = new Print({
-                    map: map,
-                    url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
-                }, "printer");
-                printer.startup();
-
-                var geoLocate = new LocateButton({
-                    map: map
-                }, "LocateButton");
-                geoLocate.startup();
-
-
-            });
-       
-       
-
-
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-         
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-            </script>
 
    
+    @Styles.Render("~/Content/css")
+    <script src="https://js.arcgis.com/3.27/"></script>
+    <script type="text/javascript" src="~/Scripts/AccessRoad.js/Access.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Scripts/Road.js"></script>
+
+
 </head>
 
 <body>

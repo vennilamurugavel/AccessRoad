@@ -4,8 +4,7 @@
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-
-
+    <link rel="stylesheet" href="..\..\Content\Site.css">
 
     <div class="header" style="width:100%;background-color:cadetblue;padding-top:10px;padding-bottom:10px;text-align:center;color:black;">
         <img src="data:image/png;base64,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" style="float:left" />
@@ -13,156 +12,187 @@
     </div>
 
     <div class="main">
-        <div class="left" style="width:200px; border:solid;border-width:1px;border-color:lightslategray;float: left;">
-            <div>
-                <i class="tablinks"  title="Drawing Tools" onclick="openCity(event, 'Draw')" style="height:41px;cursor:pointer; width:49px;padding:4px;">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVGhD7ZUxDgFREIa31VCImxAFIW5D5wZUTsAxOAKtXpyBStyAf8IkL2t231rFzJP5ki+Rrb5f9r3NHMcxxRze4Al26UFKLOAj8A77MAny8UmNKIpnzY9YQik89G9G9KBZqoyg20kdeudJidgIumJVCQ9snRH0nVBDum2+GUHP1JDi2SojzMazZSPMx7NFI9T4Jp41M6JOPKs+4pd4Mpl3XtLj6+LxWni8Fh6vhcdr0oQjuIVSYJnq8Xl2UAqVNBdPTKAUm9dkPNGBUnCoifgVbL1+ftCAAyidCTP//AUeYdEIJhxhJr4NOSo2YghNxRN0ZfKA2Ai6Ys0d2BkMB8RGmGMN8wOSGnGA0oArpNvJPGe4hxs4hWNIB9txHMd5k2VP7laO4umw9ukAAAAASUVORK5CYII=" width="35" />
-                </i>
-               
-              
-                    <i class="tablinks" title="BaseMap Gallery" onclick="openCity(event, 'Base')" style="height:41px;cursor:pointer; width:45px;padding:8px;">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB+SURBVEhL3Y1BCsAgEAP3/59u2YNLTLYUoh7agcAQjcYvuA5koruwmom2NHn9YLiTBL3gCw64F+fSAffiXDrgXpxLB9yLc+mAe3EuHXAvzqUD7sW5dMC9OJcOuBfvSidJ61iugm+VD9mZpBwPdiVBP8LjB+NgV4Tu0ko+TcQNIyr7BSYfa9MAAAAASUVORK5CYII=" width="30" title="BasemapGallery" />
-                    </i>
-              
-                    
-                    
-                    <i class="tablinks" title="Measurement" onclick="openCity(event, 'Measure')" style="height:41px;cursor:pointer; width:45px;padding:6px;">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjAg0JDgasn/sFAAAB5klEQVRIx+3TPUhWcRQG8J+vX9igS2QiWRZGBCVCg5FQSK3RkFYQQkkNgUPQEAURIQ5uiVFEgTW15BARlH0Q9EGEOAQqYZQEWVBQpKGk77/B99XrfS8hCU0+dznnPOd5/vec+78s4z+iaWnyRv3/JixRCp7oWrwo325d+g3hhuClBsHBxYmLtPkgCIIJ9Aqa3RdsNOyEor/L6w1lxLNPsT5D6gWjdgqCY3FJwYJsr02Z6J0h3+Ubds1ZPNeAAT0OW6tDyD39jFOKvTHipMpIvU5a0OaeKVtsNym4KhWXtwpm7LNKYYzpFQR1bjtnjbHMcBcXNm01KXg7N8A8NpsR/FQgT0p/ZD+t800prwSDyhPWeksQ9GWy9ojBuPXZpgOCr9YlyGtMC4LzmTzP3YjFnWzba8H+xM96M9O6Z65SaTxisQ1W++VBonyD34JgWlmk2ikI0h5qyl6rMhWJBtcz5wzEbL/oVINyLUrpdjpRXmUqY9AdYwrs0K5fWtDMiI5Eg8tzkx6KMd2RLVxKqfAsQV7uiMcu+IEXMW4sEtcWKDGYYLBLsWbfFGoxGuMmInF1ypTPCQaf0KRKo0c53IpIvJL3uT8Gsnfgo+oc5kpkB+k8R/VIJ1rUqvR0wQvP4vj8JTZlGUvHH7jtuKeeg0zwAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTAyLTEzVDA4OjE0OjA2KzAxOjAwR8KaxwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wMi0xM1QwODoxNDowNiswMTowMDafInsAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC" />
-                </i>
-              
-                <i class="tablinks" title="Print" onclick="openCity(event, 'print')" style="height:41px; cursor:pointer;width:45px;padding:13px;">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVEhL7dW9K4VRAMfxR0ryUpQkyeAvkEVJSRkMVouMFiWRP0BJDGYkC8XAImUzyWAx3likFCXERMnr93e6R4/jOc89z7139KvPcM49z/M79+U8N0pIPdbxgK8M3pHDEIKyhaQbhXpDF1JThVc8o00TGbMAlS2ZUUraoYVXZpQ9I9D122aUkv8iN0FFteiFFt6gowhT0PX70KYr8JMG7EHnQIvK6QljMNlA0qJiveA+Nv5ED6LH/EQ53KEVldjJz8kifi0s1RFsxmHnVzQRX1gqfc8TGMRFfk7KXuTjLdLz7rQIl0i6n7eo1APrMkUfsQnLFlVjIEAnFF/RMqLz2IRli+wjqZADKL6iaZgXdajiL9iiZhwGmIeSVKR7NcKkD2vQzuJFNRj26IcbW6TrdWDn0IQ/cZ/eaR/dMdzYosx/E9rNrod26ya4qAVaeG1G2TMKXb9pRgVyC/04ZpH03fjo3ZxARTMoGO0q6WyFOkMdgtINPdr1Swy1iknon9pJFH0DS9RiGvoPtroAAAAASUVORK5CYII=" title="print" />
-                </i>
+        <div class="left" style="width:248px; border:solid;border-width:1px;border-color:black;float: left;">
+            <div class="tab">
+                <button class="tablinks" style="padding-left:8px;" onclick="openCity(event, 'Draw')">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVGhD7ZUxDgFREIa31VCImxAFIW5D5wZUTsAxOAKtXpyBStyAf8IkL2t231rFzJP5ki+Rrb5f9r3NHMcxxRze4Al26UFKLOAj8A77MAny8UmNKIpnzY9YQik89G9G9KBZqoyg20kdeudJidgIumJVCQ9snRH0nVBDum2+GUHP1JDi2SojzMazZSPMx7NFI9T4Jp41M6JOPKs+4pd4Mpl3XtLj6+LxWni8Fh6vhcdr0oQjuIVSYJnq8Xl2UAqVNBdPTKAUm9dkPNGBUnCoifgVbL1+ftCAAyidCTP//AUeYdEIJhxhJr4NOSo2YghNxRN0ZfKA2Ai6Ys0d2BkMB8RGmGMN8wOSGnGA0oArpNvJPGe4hxs4hWNIB9txHMd5k2VP7laO4umw9ukAAAAASUVORK5CYII=" title="Drawing Tools" width="35" style="padding:4px;" />
+
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'Base')">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB+SURBVEhL3Y1BCsAgEAP3/59u2YNLTLYUoh7agcAQjcYvuA5koruwmom2NHn9YLiTBL3gCw64F+fSAffiXDrgXpxLB9yLc+mAe3EuHXAvzqUD7sW5dMC9OJcOuBfvSidJ61iugm+VD9mZpBwPdiVBP8LjB+NgV4Tu0ko+TcQNIyr7BSYfa9MAAAAASUVORK5CYII=" width="30" title="BasemapGallery" style="padding:3px;" />
+
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'Measure')">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjAg0JDgasn/sFAAAB5klEQVRIx+3TPUhWcRQG8J+vX9igS2QiWRZGBCVCg5FQSK3RkFYQQkkNgUPQEAURIQ5uiVFEgTW15BARlH0Q9EGEOAQqYZQEWVBQpKGk77/B99XrfS8hCU0+dznnPOd5/vec+78s4z+iaWnyRv3/JixRCp7oWrwo325d+g3hhuClBsHBxYmLtPkgCIIJ9Aqa3RdsNOyEor/L6w1lxLNPsT5D6gWjdgqCY3FJwYJsr02Z6J0h3+Ubds1ZPNeAAT0OW6tDyD39jFOKvTHipMpIvU5a0OaeKVtsNym4KhWXtwpm7LNKYYzpFQR1bjtnjbHMcBcXNm01KXg7N8A8NpsR/FQgT0p/ZD+t800prwSDyhPWeksQ9GWy9ojBuPXZpgOCr9YlyGtMC4LzmTzP3YjFnWzba8H+xM96M9O6Z65SaTxisQ1W++VBonyD34JgWlmk2ikI0h5qyl6rMhWJBtcz5wzEbL/oVINyLUrpdjpRXmUqY9AdYwrs0K5fWtDMiI5Eg8tzkx6KMd2RLVxKqfAsQV7uiMcu+IEXMW4sEtcWKDGYYLBLsWbfFGoxGuMmInF1ypTPCQaf0KRKo0c53IpIvJL3uT8Gsnfgo+oc5kpkB+k8R/VIJ1rUqvR0wQvP4vj8JTZlGUvHH7jtuKeeg0zwAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTAyLTEzVDA4OjE0OjA2KzAxOjAwR8KaxwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wMi0xM1QwODoxNDowNiswMTowMDafInsAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC" title="Measurement" width="30" style="padding:1px;" />
+                </button>
+                <button class="tablinks" onclick="openCity(event, 'Print')">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGDSURBVEhL7dW9K4VRAMfxR0ryUpQkyeAvkEVJSRkMVouMFiWRP0BJDGYkC8XAImUzyWAx3likFCXERMnr93e6R4/jOc89z7139KvPcM49z/M79+U8N0pIPdbxgK8M3pHDEIKyhaQbhXpDF1JThVc8o00TGbMAlS2ZUUraoYVXZpQ9I9D122aUkv8iN0FFteiFFt6gowhT0PX70KYr8JMG7EHnQIvK6QljMNlA0qJiveA+Nv5ED6LH/EQ53KEVldjJz8kifi0s1RFsxmHnVzQRX1gqfc8TGMRFfk7KXuTjLdLz7rQIl0i6n7eo1APrMkUfsQnLFlVjIEAnFF/RMqLz2IRli+wjqZADKL6iaZgXdajiL9iiZhwGmIeSVKR7NcKkD2vQzuJFNRj26IcbW6TrdWDn0IQ/cZ/eaR/dMdzYosx/E9rNrod26ya4qAVaeG1G2TMKXb9pRgVyC/04ZpH03fjo3ZxARTMoGO0q6WyFOkMdgtINPdr1Swy1iknon9pJFH0DS9RiGvoPtroAAAAASUVORK5CYII=" title="print" width="30" style="padding:4px;" />
+                </button>
+
+
+            </div>
+
+            <div id="Draw" class="tabcontent">
+                <button data-dojo-type="dijit/form/Button" data-dojo-props="
+                                     iconClass:'myIcon',
+                                     showLabel:false,
+                                     onClick:function(){ console.log('Line button was clicked!'); }">
+                    Line
+                </button>
+                <button data-dojo-type="dijit/form/Button"  data-dojo-props="
+                                     iconClass:'myIcon1',
+                                     showLabel:false,
+                                     onClick:function(){ console.log('Polyline button was clicked!'); }">
+                    Polyline
+                </button>
+
+                <button data-dojo-type="dijit/form/Button" data-dojo-props="
+                                     iconClass:'myIcon2',
+                                     showLabel:false,
+                                     onClick:function(){ console.log('Freehand Polyline button was clicked!'); }">
+                    Freehand Polyline
+                </button>
+
 
             </div>
 
 
+            <div id="Base" class="tabcontent">
 
-            <div class="tab" style="border:solid;border-width:1px;">
-                <div id="Draw" class="tabcontent">
-                    <button data-dojo-type="dijit/form/Button">Line</button>
-                    <button data-dojo-type="dijit/form/Button">Polyline</button>
 
-                    <button data-dojo-type="dijit/form/Button">Freehand Polyline</button>
+
+                <div id="basemapGallery">
 
                 </div>
 
 
-               
-                <div id="Base" class="tabcontent">
-                    <div id="basemapGallery">
+            </div>
+            <div id="Measure" class="tabcontent">
 
-                    </div>
+
+
+
+
+
+                <div id="measurement">
+
 
                 </div>
-              
-                <div id="Measure" class="tabcontent">
+
+
+            </div>
+            <div id="Print" class="tabcontent">
 
 
 
 
-                    <div id="measurement">
 
-
-                    </div>
-
-                </div>
-               
-                <div id="print" class="tabcontent" style="height:70px;">
-                    <div id="printer" style=" padding-left: 44px ">
-
-                    </div>
+                <div id="printer">
 
                 </div>
+
 
 
 
             </div>
-        
-         
+
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn" style="color:black;font-size:17px;width:198px;border-bottom:solid;border-width:1px;"><center><b>AccessRoad</b></center></button>
+                <button onclick="myFunction()" class="dropbtn">
+                    AccessRoad
+                </button>
+                <div id="myDropdown" class="dropdown-content">
 
-                <div id="myDropdown" class="dropdown-content" style="width:200px;">
-                    <div>
-                        <h5><b>Project Name</b></h5>
-                        <input type="text" style="width:140px;">
-                        <button type="button">save</button>
                    
-                        <div style="padding:10px;">
-                            <label class="container">
+                    <div class="container" style="padding-left:0px;">
+                       <h5><b>Road List</b></h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Road</button><br /><br />
+                        <table style="font-size:13px;float:left">
+                          
+                                <tr>
+                                    <th style="width:56px;">
+                                        ID
+                                    </th>
+                                    <th style="width:96px;">
+                                        Name
+                                    </th>
+                                   
+                                    <th style="width:10px;">
+                                        Actions
+                                    </th>
+                                </tr>
+                          
+                                <tbody class="tbody" style="overflow:scroll" ; >  </tbody>
+                        </table>
+                    </div>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                       
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">Add New Road</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="RoadId">ID</label>
+                                            <input type="text" class="form-control" id="RoadID" placeholder="Road Id" disabled="disabled" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Name">Name</label>
+                                            <input type="text" class="form-control" id="Name" placeholder="Road Name"  />
+                                        </div>
 
-                                <input type="checkbox">
-
-                                AccessRoad-1  <i class="fa fa-close" style="font-size:15px;padding-left:30px;  color:red;"></i>
-
-                                <span class="checkmark">	</span>
-                            </label>
-                            <label class="container">
-
-                                <input type="checkbox">
-
-                                AccessRoad-2  <i class="fa fa-close" style="font-size:15px;color:red;padding-left:30px;"></i>
-
-                                <span class="checkmark">	</span>
-                            </label>
-                            <label class="container">
-
-                                <input type="checkbox">
-                                AccessRoad-3  <i class="fa fa-close" style="font-size:15px;color:red;padding-left:30px;"></i>
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-
-                                <input type="checkbox">
-                                AccessRoad-4  <i class="fa fa-close" style="font-size:15px;color:red;padding-left:30px;"></i>
-                                <span class="checkmark"></span>
-                            </label>
+                                    </form>
+                                </div>
+                             
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
-
         </div>
+    </div>
 
 
 
+    <div class="content">
 
-        </div>
-  
+        <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
 
-            <div class="content">
+            <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="border:solid;border-width:1px;">
 
-                <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
-
-                    <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="border:solid;border-width:1px;">
-
-                    </div>
-
-                    <div id="LocateButton">
-                    </div>
-                    <div id="search">
-
-                    </div>
-
-
-                    <div id="overviewMapDijit">
-                    </div>
-
-                </div>
             </div>
-  
+
+            <div id="LocateButton">
+            </div>
+            <div id="search">
+
+            </div>
+
+
+            <div id="overviewMapDijit">
+            </div>
+
+        </div>
+    </div>
+
 
     <footer style="background-color:cadetblue;
                             width: 100%;height:5%;">
-        <strong>
-            <p style="color:black;font-size:20px;text-align:left">
-                Email-id:vennilageo@gmail.com
-                <span style="float:right;color:black;font-size:20px;">gisbiz-chennai</span>
 
-            </p>
-        </strong>
+        <p style="color:black;font-size:20px;text-align:left">
+            <b>Email-id:vennilageo@gmail.com</b>
+            <span style="float:right;color:black;font-size:20px;"><b>gisbiz-chennai</b></span>
+
+        </p>
+
     </footer>
 
 

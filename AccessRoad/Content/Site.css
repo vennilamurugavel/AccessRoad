@@ -5,12 +5,13 @@
     margin: 0;
     padding: 0;
 }
- body {
+
+body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-  overflow-y:hidden;
+    overflow-y: hidden;
 }
 
 #search {
@@ -41,7 +42,7 @@
     width: 44px !important;
     height: 44px !important;
     border: solid;
-    border-color:black !important;
+    border-color: black !important;
 }
 
 #LocateButton {
@@ -49,151 +50,88 @@
     top: 97px;
     left: 27px;
     z-index: 50;
-   
 }
 
 
 
-.esriPrint {
- padding:10px;
-    position: absolute !important;
-}
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 12px;
-   
-}
 
-    /* Hide the browser's default checkbox */
-    .container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
-
-/* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
-    border:solid;
-    border-width:1px;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
 
 /* Style the tab */
 .tab {
     overflow: hidden;
-   
-    background-color: #f1f1f1;
-    
+    border-bottom: solid;
+    border-width: 1px;
+    width: 248px;
+    height: 34px;
 }
 
     /* Style the buttons inside the tab */
-    .tab i {
+    .tab button {
         background-color: inherit;
         float: left;
         border: none;
         outline: none;
         cursor: pointer;
-        padding: 18px 16px;
+        padding: 3px 15px;
         transition: 0.3s;
         font-size: 17px;
     }
 
         /* Change background color of buttons on hover */
-        .tab i:hover {
-            background-color: cadetblue;
+        .tab button:hover {
+            background-color: #ccc;
         }
 
         /* Create an active/current tablink class */
-        .tab i.active {
+        .tab button.active {
             background-color: cadetblue;
         }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+    padding: 6px 11px;
+    border: solid;
+    border-width: 2px;
+    width: 248px;
 }
-#basemapGallery {
-    height: 100px;
-    overflow-y:scroll;
+
+
+
+#measurement {
+    overflow-x: scroll;
 }
-#measurement
-{
-    overflow-x:scroll;
-}
+
 .esriMeasurement {
     width: 100% !important;
     height: 100% !important;
-    overflow-x:scroll !important;
+    overflow-x: scroll !important;
 }
 
 
 .dropbtn {
     background-color: transparent;
     color: black;
-    padding: 0px;
+    padding: 4px;
     font-size: 16px;
-    border: solid;
-    border-width: 1px;
-    border-color: darkgray;
     cursor: pointer;
-    width: 200px;
-    height: 40px;
-    padding-left: 15px;
+    padding-left: 5px;
+    width: 248px;
+    border-bottom: none;
+    height: 34px;
+    border-right: none;
+    border-top: none;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: transparent;
+.dropdown:hover {
+    background-color: cadetblue;
 }
+
+/* Create an active/current tablink class */
+.dropdown.active {
+    background-color: #ccc;
+}
+
 
 
 .dropdown {
@@ -205,17 +143,18 @@
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    min-width: 203px;
-    overflow: auto;
-    border: 1px solid #ddd;
+    border: solid;
+    border-width: 2px;
     z-index: 1;
+    width: 248px;
+    padding: 10px;
 }
 
     .dropdown-content a {
         color: black;
         padding: 12px 16px;
         text-decoration: wavy;
-        display: block;
+        display: inline-table;
     }
 
 .dropdown a:hover {
@@ -226,12 +165,98 @@
     display: block;
 }
 
-.arcgisSearch .searchGroup .searchInput {
-    width: 137px !important;
-    height:19px !important;
-}
+
 .arcgisSearch .searchBtn {
     height: 19px !important;
-    
 }
 
+.arcgisSearch .searchGroup .searchInput {
+    width: 137px !important;
+    height: 19px !important;
+}
+
+
+
+#basemapGallery {
+    height: 96px;
+    padding-left: 16px;
+    overflow-y: scroll;
+}
+
+
+.esriBasemapGalleryLabelContainer {
+    width: 91% !important;
+}
+
+.myIcon {
+    background-image: url('Image/icons8-line-24.png');
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 22px;
+    text-align: center;
+}
+.myIcon1 {
+   
+    background-image: url('image/icons8-polyline-26.png');
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 22px;
+    text-align: center;
+}
+.myIcon2 {
+  
+    background-image: url('image/icons8-pulse-24.png');
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 22px;
+    text-align: center;
+}
+.esriPrint {
+    padding: 8px !important;
+    padding-left: 60px !important;
+}
+
+.form-control {
+    display: block;
+    width: 300px !important;
+}
+
+
+.table {
+    width: 7% !important;
+}
+
+td {
+    padding: 6px !important;
+    border-bottom: solid !important;
+    border-width: 1px !important;
+}
+
+
+
+.container {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-bottom: 12px ;
+    overflow-y:scroll;
+    height:310px;
+    width:233px;
+   
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0 !important;
+    background-color: #000;
+}
+.claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode {
+    padding: 2px 4px 2px 4px !important;
+}
+    
