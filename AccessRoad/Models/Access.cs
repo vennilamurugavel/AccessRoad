@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AccessRoad.Models
 {
@@ -9,6 +10,6 @@ namespace AccessRoad.Models
     {
         public int RoadID { get; set; }
         public string Name { get; set; }
-        public bool isNewlyEnrolled { get; set; }
+        public string Graphic_Route { get; set; }
     }
 }

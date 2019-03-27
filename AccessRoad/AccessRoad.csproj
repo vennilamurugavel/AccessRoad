@@ -142,6 +142,7 @@
     <Content Include="Content\Image\icons8-line-24.png" />
     <Content Include="Content\Image\icons8-polyline-26.png" />
     <Content Include="Content\Image\icons8-pulse-24.png" />
+    <Content Include="Content\Image\loader.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -5,15 +5,14 @@
     margin: 0;
     padding: 0;
 }
-
-body {
+body 
+{
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     overflow-y: hidden;
 }
-
 #search {
     display: block;
     position: absolute;
@@ -22,14 +21,10 @@ body {
     left: 75px;
     line-height: 1.25em;
 }
-
-#map_root {
+#map_root 
+{
     height: 540px !important;
 }
-
-
-
-
 .ovwContainer {
     top: 20px !important;
     right: 30px !important;
@@ -37,35 +32,25 @@ body {
     height: 150px !important;
     border: solid;
 }
-
 .ovwHighlight {
     width: 44px !important;
     height: 44px !important;
     border: solid;
     border-color: black !important;
 }
-
 #LocateButton {
     position: absolute;
     top: 97px;
-    left: 27px;
+    left: 24px;
     z-index: 50;
 }
-
-
-
-
-
-/* Style the tab */
 .tab {
     overflow: hidden;
     border-bottom: solid;
     border-width: 1px;
     width: 248px;
     height: 34px;
-}
-
-    /* Style the buttons inside the tab */
+}/* Style the buttons inside the tab */
     .tab button {
         background-color: inherit;
         float: left;
@@ -76,7 +61,6 @@ body {
         transition: 0.3s;
         font-size: 17px;
     }
-
         /* Change background color of buttons on hover */
         .tab button:hover {
             background-color: #ccc;
@@ -95,20 +79,14 @@ body {
     border-width: 2px;
     width: 248px;
 }
-
-
-
 #measurement {
     overflow-x: scroll;
 }
-
 .esriMeasurement {
     width: 100% !important;
     height: 100% !important;
     overflow-x: scroll !important;
 }
-
-
 .dropbtn {
     background-color: transparent;
     color: black;
@@ -122,23 +100,17 @@ body {
     border-right: none;
     border-top: none;
 }
-
 .dropdown:hover {
     background-color: cadetblue;
 }
-
 /* Create an active/current tablink class */
 .dropdown.active {
     background-color: #ccc;
 }
-
-
-
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -149,41 +121,30 @@ body {
     width: 248px;
     padding: 10px;
 }
-
     .dropdown-content a {
         color: black;
         padding: 12px 16px;
         text-decoration: wavy;
         display: inline-table;
     }
-
 .dropdown a:hover {
     background-color: #ddd;
 }
-
 .show {
     display: block;
 }
-
-
 .arcgisSearch .searchBtn {
     height: 19px !important;
 }
-
 .arcgisSearch .searchGroup .searchInput {
     width: 137px !important;
     height: 19px !important;
 }
-
-
-
 #basemapGallery {
     height: 96px;
     padding-left: 16px;
     overflow-y: scroll;
 }
-
-
 .esriBasemapGalleryLabelContainer {
     width: 91% !important;
 }
@@ -213,7 +174,7 @@ body {
 }
 .esriPrint {
     padding: 8px !important;
-    padding-left: 60px !important;
+    padding-left: 75px !important;
 }
 
 .form-control {
@@ -227,7 +188,7 @@ body {
 }
 
 td {
-    padding: 6px !important;
+    padding: 5px !important;
     border-bottom: solid !important;
     border-width: 1px !important;
 }
@@ -242,8 +203,9 @@ td {
     font-size: 13px;
     margin-bottom: 12px ;
     overflow-y:scroll;
-    height:310px;
+    height:237px;
     width:233px;
+    overflow-x:hidden;
    
 }
 
@@ -259,4 +221,17 @@ td {
 .claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode {
     padding: 2px 4px 2px 4px !important;
 }
-    
+.btn {
+    padding: 6px 56px !important;
+}
+th {
+    padding: 3px !important;
+}
+#load {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    background: url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.25);
+   
+}

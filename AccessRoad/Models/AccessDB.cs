@@ -26,30 +26,32 @@ namespace AccessRoad.Models
                     {
                         RoadID = Convert.ToInt32(rdr["RoadId"]),
                         Name = rdr["Name"].ToString(),
-                       
+                        Graphic_Route = rdr["Graphic_Route"].ToString()
                     });
                 }
                 return lst;
             }
         }
-        public int Add(Access emp)
+        public int Add(Access action)
         {
             int i;
             using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
-                SqlCommand com = new SqlCommand("InsertUpdateRoad", con);
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@Id", emp.RoadID);
-                com.Parameters.AddWithValue("@Name", emp.Name);
-              
+                SqlCommand com = new SqlCommand("InsertUpdateRoad", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                com.Parameters.AddWithValue("@Id", action.RoadID);
+                com.Parameters.AddWithValue("@Name", action.Name);
+                com.Parameters.AddWithValue("@Graphic_Route", action.Graphic_Route);
                 com.Parameters.AddWithValue("@Action", "Insert");
                 i = com.ExecuteNonQuery();
             }
             return i;
         }
-        //Method for Updating Employee record
-        public int Update(Access emp)
+        //Method for Updating road record
+        public int Update(Access action)
         {
             int i;
             using (SqlConnection con = new SqlConnection(cs))
@@ -57,15 +59,15 @@ namespace AccessRoad.Models
                 con.Open();
                 SqlCommand com = new SqlCommand("InsertUpdateRoad", con);
                 com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@Id", emp.RoadID);
-                com.Parameters.AddWithValue("@Name", emp.Name);
-               
+                com.Parameters.AddWithValue("@Id", action.RoadID);
+                com.Parameters.AddWithValue("@Name", action.Name);
+                com.Parameters.AddWithValue("@Graphic_Route", action.Graphic_Route);
                 com.Parameters.AddWithValue("@Action", "Update");
                 i = com.ExecuteNonQuery();
             }
             return i;
         }
-        //Method for Deleting an Employee
+        //Method for Deleting an road record
         public int Delete(int ID)
         {
             int i;
