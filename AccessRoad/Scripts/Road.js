@@ -111,8 +111,9 @@ function UpdateID(id) {
             $('#RoadID').val(result.RoadID);
             $('#Name').val(result.Name);
           
-            
+
             $('#myModal').modal('show');
+          
             $('#btnUpdate').show();
             $('#btnAdd').hide();
         },
@@ -184,7 +185,7 @@ function clearTextBox() {
 //Valdidation using jquery
 function validate() {
     var isValid = true;
-    if ($('#Name').val().trim() == "") {
+    if ($('#Name').val().trim() == "Already exits") {
         $('#Name').css('border-color', 'Red');
         isValid = false;
     }

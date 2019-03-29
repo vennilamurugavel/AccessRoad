@@ -107,7 +107,8 @@ require([
                             "paths": graphicsObj.graphics[z].paths,
                             "spatialReference": { "wkid": 3857 }
                         },
-                        "symbol": { "color": [0, 0, 0, 255], "width": 1, "type": "esriSLS", "style": "esriSLSSolid" }
+                        "symbol": { "color": [255, 0, 0, 255], "width": 2, "type": "esriSLS", "style": "esriSLSSolid" }
+                        
                     };
                     var graphic = new Graphic(line);
                     map.graphics.add(graphic);
@@ -118,78 +119,62 @@ require([
         });
 
     });
-
       function Erase()
       {
          
           window.mapObject.graphics.clear();
           
       }
-
-function sendMapObject() {
-
-
-    var graphicsArray = [];
-    for (i = 0; i < window.mapObject.graphics.graphics.length; i++) {
+      function sendMapObject() {
+          var graphicsArray = [];
+          for (i = 0; i < window.mapObject.graphics.graphics.length; i++) {
+          graphicsArray.push(window.mapObject.graphics.graphics[i].geometry);
+          }
+          var graphicsObj =
+         {
+          "graphics": graphicsArray
+         };
+         var graphicsJsonString = JSON.stringify(graphicsObj);
+         Add(graphicsJsonString);
+      }
+      function sendObject() {
+        var graphicsArray = [];
+        for (i = 0; i < window.mapObject.graphics.graphics.length; i++) {
         graphicsArray.push(window.mapObject.graphics.graphics[i].geometry);
-    }
-    var graphicsObj =
-    {
+        }
+        var graphicsObj =
+        {
         "graphics": graphicsArray
-    };
-    var graphicsJsonString = JSON.stringify(graphicsObj);
+        };
+        var graphicsJsonString = JSON.stringify(graphicsObj);
+        Update(graphicsJsonString);
+      }
+      function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+      }
+      function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
 
-
-    Add(graphicsJsonString);
-   
-
-}
-function sendObject() {
-
-
-    var graphicsArray = [];
-    for (i = 0; i < window.mapObject.graphics.graphics.length; i++) {
-        graphicsArray.push(window.mapObject.graphics.graphics[i].geometry);
-    }
-    var graphicsObj =
-    {
-        "graphics": graphicsArray
-    };
-    var graphicsJsonString = JSON.stringify(graphicsObj);
-
-
-   
-    Update(graphicsJsonString);
-
-}
-
-
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-
-}
-document.onreadystatechange = function () {
-    var state = document.readyState
-    if (state == 'interactive') {
+      }
+       document.onreadystatechange = function () {
+       var state = document.readyState
+       if (state == 'interactive') {
         document.getElementById('contents').style.visibility = "hidden";
-    } else if (state == 'complete') {
-        setTimeout(function () {
+          } else if (state == 'complete') {
+            setTimeout(function () {
             document.getElementById('interactive');
             document.getElementById('load').style.visibility = "hidden";
             document.getElementById('contents').style.visibility = "visible";
-        }, 1000);
-    }
-}
+            }, 1000);
+          }
+       }
